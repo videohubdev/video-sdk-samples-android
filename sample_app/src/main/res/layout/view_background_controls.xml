@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Default text matches BackgroundControlsView's actual starting state
+         (processor enabled, background = bundled default image) so the
+         label is never blank/wrong before the first change — see
+         setProcessorEnabled()/setBackgroundLabel(), which the host calls to
+         keep it in sync. -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToggleProcessor"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Disable FX" />
+
+    <!-- Opens a picker menu (blur-only / bundled default / any photo). -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToggleBackground"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Background: Default" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFlipCamera"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Flip Camera" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Blur" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDecreaseBlur"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="−" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnIncreaseBlur"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+</merge>

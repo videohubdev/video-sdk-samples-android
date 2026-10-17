@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <dev.videohub.android.renderer.TextureViewRenderer
+        android:id="@+id/renderer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- Host-only: toggles for the host's own published camera/mic. A
+         viewer never publishes anything, so it has nothing here to
+         control — see ActivityBackground's isHostUser visibility gating. -->
+    <LinearLayout
+        android:id="@+id/localControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/imgVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/outline_videocam_24"
+            android:layout_margin="8dp"
+            app:text="camera: on"/>
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/imgAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/outline_mic_24"
+            android:layout_margin="8dp"
+            app:text="Mic: on"/>
+
+    </LinearLayout>
+
+    <!-- Scrolls horizontally so the control row never gets clipped on
+         narrow screens. -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingHorizontal="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.sample.videohub.background.BackgroundControlsView
+            android:id="@+id/backgroundControls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

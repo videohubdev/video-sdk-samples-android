@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">sample_app_alpha</string>
+    <string name="videohub">VideoHub</string>
+    <string name="attach_file">Attach file</string>
+</resources>

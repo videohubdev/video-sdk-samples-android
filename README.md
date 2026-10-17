@@ -1,1 +1,0 @@
-# video-sdk-samples-android

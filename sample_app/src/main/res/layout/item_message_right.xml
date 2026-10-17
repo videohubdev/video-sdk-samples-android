@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="4dp"
+    android:orientation="vertical"
+    android:gravity="end">
+
+    <!-- Quoted original — only shown by ReplyMessageItem. -->
+    <TextView
+        android:id="@+id/tvQuoted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="6dp"
+        android:maxWidth="280dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="2dp"
+        android:background="#33FFFFFF"
+        android:textSize="13sp"
+        android:textColor="@color/gray"
+        android:visibility="gone"
+        tools:text="Alice: original message" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:maxWidth="280dp"
+        android:padding="8dp"
+        android:background="@drawable/ic_background_chat_right"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="message "/>
+
+    <TextView
+        android:id="@+id/tvReactions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="6dp"
+        android:textSize="13sp"
+        android:visibility="gone"
+        tools:text="❤️ 2 👍 1"/>
+
+</LinearLayout>

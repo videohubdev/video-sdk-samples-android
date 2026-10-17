@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/outline_videocam_off_24"
+            app:tint="#2196F3" />
+
+        <dev.videohub.android.renderer.TextureViewRenderer
+            android:id="@+id/renderer_local"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_marginEnd="0dp"
+        android:elevation="40dp"
+        app:layout_constraintDimensionRatio="9:16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+    <dev.videohub.android.renderer.TextureViewRenderer
+        android:id="@+id/renderer_remote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/img_cancel"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/background_call_red_ciricle"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dp"
+            android:src="@drawable/outline_close_24"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/img_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/outline_cameraswitch_24"
+            android:layout_margin="8dp"
+            app:text="camera: switch"/>
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/img_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/outline_mic_24"
+            android:layout_margin="8dp"
+            app:text="Mic: on"/>
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/img_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/outline_videocam_24"
+            android:layout_margin="8dp"
+            app:text="camera: on"/>
+
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            android:background="#65000000"/>
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/img_remote_mute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/outline_mic_24"
+            android:layout_margin="8dp"
+            app:text="mute: on"/>
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/img_remote_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/outline_videocam_24"
+            android:layout_margin="8dp"
+            app:text="Video: on"/>
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/img_remote_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/baseline_cast_24"
+            android:layout_margin="8dp"
+            app:text="Screen: on"/>
+
+        <com.sample.videohub.utils.IconTextView
+            android:id="@+id/img_remote_kick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/account_cancel_outline"
+            android:layout_margin="8dp"
+            app:text="Kick"/>
+
+    </LinearLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/txt_call_id1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/ll_cancel"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:layout_margin="16dp"-->
+<!--        />-->
+
+    <com.sample.videohub.utils.IconTextView
+        android:id="@+id/txt_call_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/ll_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        app:icon="@drawable/outline_content_copy_24"
+        app:text=""/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

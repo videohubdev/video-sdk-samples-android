@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IconTextView">
+        <attr name="icon" format="reference" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableFabMenu">
+        <attr name="fabMainIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SonarRingView">
+        <attr name="ringCount" format="integer" />
+        <attr name="ringColor" format="color" />
+    </declare-styleable>
+</resources>

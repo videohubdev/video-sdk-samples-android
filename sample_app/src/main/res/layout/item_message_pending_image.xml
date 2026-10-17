@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- "Shadow" bubble shown the instant a file is picked, before upload even
+     starts — always right-aligned (only the sender sees their own send in
+     flight). Swapped for item_message_attachments_right once the real
+     broadcast for it arrives (see ChatFragment.pendingLocalIdByFileId). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="4dp"
+    android:orientation="vertical"
+    android:gravity="end">
+
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="end">
+
+        <ImageView
+            android:id="@+id/imgAttachment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:alpha="0.5"
+            android:background="@drawable/ic_background_chat_right"
+            android:scaleType="centerCrop"/>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressImage"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+            app:trackThickness="3dp"
+            app:indicatorColor="@color/white"
+            tools:progress="40"/>
+
+    </FrameLayout>
+
+</LinearLayout>

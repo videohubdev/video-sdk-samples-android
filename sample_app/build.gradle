@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+
+}
+
+android {
+    namespace 'com.sample.videohub'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.sample.videohub"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.fragment.ktx
+
+    def videohub_version = "1.16.0"
+    implementation("dev.videohub:videohub-android:${videohub_version}")
+    implementation("dev.videohub:videohub-android-track-processors:${videohub_version}")
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    def groupie_version = "2.10.1"
+    implementation ("com.github.lisawray.groupie:groupie:$groupie_version")
+    implementation ("com.github.lisawray.groupie:groupie-viewbinding:$groupie_version")
+
+    implementation("com.google.code.gson:gson:2.14.0")
+    implementation("com.google.android.material:material:1.12.0")
+
+    // Renders animated GIF/stickers received from the IME keyboard tray in chat.
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+}
+

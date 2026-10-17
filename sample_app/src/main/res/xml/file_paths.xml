@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Must match ChatFragment.attachmentCacheDir: context.cacheDir/attachments. -->
+    <cache-path name="attachments" path="attachments/" />
+</paths>
