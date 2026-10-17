@@ -60,7 +60,6 @@ class VideoViewModel: ViewModel() {
         session.local.publishVideoStream()
         session.local.publishAudioStream()
 
-
         RTMObject.init(session, room)
 
         viewModelScope.launch {
