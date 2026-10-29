@@ -49,7 +49,7 @@ dependencies {
     implementation libs.androidx.activity.ktx
     implementation libs.androidx.fragment.ktx
 
-    def videohub_version = "1.16.0"
+    def videohub_version = "1.17.0"
     implementation("dev.videohub:videohub-android:${videohub_version}")
     implementation("dev.videohub:videohub-android-track-processors:${videohub_version}")
 
