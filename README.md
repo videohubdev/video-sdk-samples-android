@@ -151,6 +151,20 @@ session.local.setMicrophoneEnabled(isMicrophoneEnabled)
 # Screen Sharing
 ## Start screen share
 
+### update AndroidManifest.xml
+```xml
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+
+<application>
+    <service
+        android:name="dev.videohub.android.room.track.screencapture.ScreenCaptureService"
+        android:enabled="true"
+        android:foregroundServiceType="mediaProjection"
+        android:stopWithTask="true" />
+</application>
+```
+
 ```kotlin
 private fun requestMediaProjection() {
     val mediaProjectionManager = getSystemService(MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
